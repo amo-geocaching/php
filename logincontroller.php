@@ -45,8 +45,6 @@ if ( $_POST['type'] === 'login' ) {
 
 if ($_POST['type'] === 'register') {
 
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -126,19 +124,18 @@ if ($_POST['type'] === 'register') {
             }
             die();
         } else {
-            header('location: login.php');
+            //header('location: login.php');
         }
         $passwordHash = password_hash($password, PASSWORD_BCRYPT, array("cost" => 12));
 
-        $sql = "INSERT INTO users (firstname, lastname, username, email, password) 
-                       VALUES (:firstname, :lastname, :username, :email, :password)";
+        $sql = "INSERT INTO users (username, email, password) 
+                       VALUES (:username, :email, :password)";
         $prepare = $db->prepare($sql);
         $prepare->execute([
-            ':firstname'     => $firstname,
-            ':lastname'      => $lastname,
             ':email'         => $email,
             ':username'      => $username,
             ':password'      => $passwordHash
         ]);
+        echo 'success';
     }
 }
