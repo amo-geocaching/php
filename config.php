@@ -7,7 +7,7 @@
  */
 
 $dbHost = "localhost";
-$dbName = "";
+$dbName = "geocaching";
 $dbUser = "root";
 $dbPass = "";
 
