@@ -25,7 +25,7 @@
             }
         </script>
 
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkT7PLWK2NvHi-oPt7iPf-wLRix53NUnQ&callback=myMap"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=key&callback=myMap"></script>
 </body>
 
 
