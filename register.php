@@ -26,11 +26,11 @@ session_start();
 <![endif]-->
 
 <!-- Add your site or application content here -->
-
+<?php require 'header.php'?>
 <main>
     <div class="main-form">
         <div class="create-form-background">
-            <div class="title-form">
+                <div class="title-form">
                 <h3>Registreren</h3>
             </div>
             <form id="create-account-form" action="controllers/logincontroller.php" method="post">
@@ -48,6 +48,7 @@ session_start();
         
     </div>
 </main>
+<?php require 'footer.php'?>
 
 <script src="js/vendor/modernizr-3.7.1.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

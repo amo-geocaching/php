@@ -1,5 +1,6 @@
 <?php
 require 'config.php';
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -12,5 +13,13 @@ require 'config.php';
     <title>Geocaching</title>
 </head>
 <body>
+    <header>
+        <ul>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="maps.php">Map</a></li>
+            <li><a href="login.php">Login</a></li>
+            <li><a href="register.php">Register</a></li>
+        </ul>
 
-</html>
+    </header>
+
