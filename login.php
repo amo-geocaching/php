@@ -28,26 +28,23 @@ session_start();
 <!-- Add your site or application content here -->
 
 <main>
-    <div class="main-form">
+    <div class="main-form">       
         <div class="create-form-background">
             <div class="title-form">
-                <h3>Registreren</h3>
+                <h3>Inloggen</h3>
             </div>
-            <form id="create-account-form" action="controllers/logincontroller.php" method="post">
+            <form id="login-account-form" action="controllers/logincontroller.php" method="post">
                 <label for="name">Gebruikersnaam</label>
                 <input type="text" name="username" required="">
-                <label for="players">Email</label>
-                <input type="text" name="email" required="">
                 <label for="players">Wachtwoord</label>
                 <input type="password" name="password" required="">
-                <label for="players">Wachtwoord Confirm</label>
-                <input type="password" name="passwordConfirm" required="">
-                <input id="submit" type="submit" name="type" value="register">
+                <input id="submit-team" type="submit" name="type" value="login">
             </form>
+            <button id="forgot" onclick="window.location.href = 'forgot-pass.php';">Vergeten</button>
         </div>
-        
     </div>
 </main>
+
 
 <script src="js/vendor/modernizr-3.7.1.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

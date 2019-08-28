@@ -1,49 +1,36 @@
 <?php
-require 'config.php';
+require '../config.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST' ) {
     header('location: index.php');
     exit;
 }
 
-if ( $_POST['type'] === 'login' ) {
+if ( $_POST['type'] == 'login' ) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-    $username = !empty($_POST['username']) ? trim($_POST['username']) : null;
-    $passwordAttempt = !empty($_POST['password']) ? trim($_POST['password']) : null;
+    $sql = "SELECT * FROM users WHERE username = :username";
+    $prepare = $db->prepare($sql);
+    $prepare->execute([
+        ':username' => $username
+    ]);
+    $user = $prepare->fetch(PDO::FETCH_ASSOC);
 
-    $sql = "SELECT id, username, password FROM users  WHERE username = :username";
-    $stmt = $db->prepare($sql);
+    //$hashedPassword = $user['password'];
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    $stmt->bindValue(':username', $username);
-
-    $stmt->execute();
-
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if($user === false){
-
-
-        die('Incorrect username / password combination!');
-    } else{
-
-        $validPassword = password_verify($passwordAttempt, $user['password']);
-
-        if($validPassword){
-
-            $_SESSION['id'] = $user['id'];
-            $_SESSION['logged_in'] = time();
-
-            header('Location: index.php');
-            exit;
-
-        } else{
-
-            die('Incorrect username / password combination!');
-        }
+    // kijkt of het wachtwoord goed is
+    var_dump(password_verify($password, $hashedPassword));
+    if (password_verify($password, $hashedPassword)) 
+    {
+        $_SESSION['loggedin'] = true;
+        $_SESSION['id'] = $user['id'];
     }
+    
 }
 
-if ($_POST['type'] === 'register') {
+if ($_POST['type'] == 'register') {
 
     $username = $_POST['username'];
     $email = $_POST['email'];
@@ -126,7 +113,7 @@ if ($_POST['type'] === 'register') {
         } else {
             //header('location: login.php');
         }
-        $passwordHash = password_hash($password, PASSWORD_BCRYPT, array("cost" => 12));
+        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
         $sql = "INSERT INTO users (username, email, password) 
                        VALUES (:username, :email, :password)";
