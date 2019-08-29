@@ -1,6 +1,8 @@
 <?php
 require 'config.php';
-
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -20,6 +22,7 @@ require 'config.php';
             <?php
             if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
                 echo "<li><a href='account.php'>Account</a></li>";
+                echo "<li><a href='controllers/logoutcontroller.php'>Logout</a></li>";
             }
             else{
                 echo "<li><a href='login.php'>Login</a></li>";
