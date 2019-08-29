@@ -24,6 +24,18 @@ if ( $_POST['type'] == 'login' ) {
     {
         $_SESSION['loggedin'] = true;
         $_SESSION['id'] = $user['id'];
+        if ($user['rank'] == 0){
+            $_SESSION['rank_id'] = 0;
+            $_SESSION['rank'] = 'User';
+        }
+        else if ($user['rank'] == 1){
+            $_SESSION['rank_id'] = 1;
+            $_SESSION['rank'] = 'Moderator';
+        }
+        else{
+            $_SESSION['rank_id'] = 2;
+            $_SESSION['rank'] = 'Admin';
+        }
         header("Location: ../index.php");
     }
     
