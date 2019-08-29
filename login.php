@@ -40,7 +40,7 @@ session_start();
                 <input type="password" name="password" required="">
                 <input id="submit-team" type="submit" name="type" value="login">
             </form>
-            <button id="forgot" onclick="window.location.href = 'forgot-pass.php';">Vergeten</button>
+            <button id="forgot" onclick="window.location.href = 'submit-email.php';">Vergeten</button>
         </div>
     </div>
 </main>
