@@ -17,15 +17,14 @@ if ( $_POST['type'] == 'login' ) {
     ]);
     $user = $prepare->fetch(PDO::FETCH_ASSOC);
 
-    //$hashedPassword = $user['password'];
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    $hashedPassword = $user['password'];
 
     // kijkt of het wachtwoord goed is
-    var_dump(password_verify($password, $hashedPassword));
     if (password_verify($password, $hashedPassword)) 
     {
         $_SESSION['loggedin'] = true;
         $_SESSION['id'] = $user['id'];
+        header("Location: ../index.php");
     }
     
 }
@@ -123,6 +122,6 @@ if ($_POST['type'] == 'register') {
             ':username'      => $username,
             ':password'      => $passwordHash
         ]);
-        echo 'success';
+        header("Location: ../index.php");
     }
 }
