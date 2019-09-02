@@ -17,8 +17,6 @@ require 'header.php'?>
             <form id="create-account-form" action="controllers/logincontroller.php" method="post">
                 <label for="name">Nieuwe Gebruikersnaam</label>
                 <input type="text" name="username" required="">
-                <label for="players">Nieuwe Email</label>
-                <input type="text" name="email" required="">
                 <label for="players">Nieuwe Wachtwoord</label>
                 <input type="password" name="password" required="">
                 <label for="players">Wachtwoord Confirm</label>

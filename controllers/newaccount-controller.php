@@ -38,13 +38,13 @@ if($mainpassword == $secupassword && $mainpassword != "" && $hash == $result['pa
         ':password'             => $hashedpassword
     ]);
 
-    echo "Je wachtwoord is succesvol aangepast, je word nu teruggestuurd";
+    echo "Je account is succesvol aangepast, je word nu teruggestuurd";
     header("refresh:4;url=../user-login.php");
 }
 else if($hash != $result['password']){
     echo "FOUT";
 }
 else{
-    echo "Je wachtwoorden komen niet overeen, je word teruggestuurd";
+    echo "Je account komen niet overeen, je word teruggestuurd";
     header("refresh:4;url=../newpassword.php?hashedpassword='.$hashedpassword.'");
 }
