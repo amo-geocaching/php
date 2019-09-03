@@ -8,12 +8,13 @@
 
 require 'header.php';
 
-$_SESSION['cacheid'] = $_GET['id'];
+$_SESSION['cacheid'] = $_GET['cacheid'];
 
-$sql = "SELECT * FROM logs WHERE userid = :userid";
+$sql = "SELECT * FROM logs WHERE userid = :userid AND cacheid = :cacheid";
 $prepare = $db->prepare($sql);
 $prepare->execute([
-    ':userid' => $_SESSION['id']
+    ':userid' => $_SESSION['id'],
+    ':cacheid' => $_GET['cacheid']
 ]);
 $cacheinfo = $prepare->fetch(PDO::FETCH_ASSOC);
 $logdate = $cacheinfo['logdate'];
