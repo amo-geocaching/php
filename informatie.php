@@ -12,6 +12,7 @@ require 'header.php';
                 je de geocache zou kunnen vinden. Het kan boven de grond, onder de grond en hogerop liggen dus let op!</p>
         </div>
         <div class="vinden-info">
+            <h2>Vinden</h2>
             <p>Geocaches kun je op verschillende plekken vinden, zoals in de grond. Hiervoor moet je voorbereid zijn
             want het kan dus zomaar dat je moet graven om de geocache te vinden. Dit hangt af aan de moeilijkheids graad.
             Sommige caches kunnen ook hogerop zitten bijvoorbeeld in een boom dus je moet niet bang zijn om vies te worden
