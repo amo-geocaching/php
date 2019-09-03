@@ -1,9 +1,5 @@
-<div class="container">
-    <div class="footer">
-        <p>Nino</p>
-        <p>Sem</p>
-        <p>Timo</p>
-        <p>Andy</p>
-        <p>&copy; Geocaching Team</p>
-    </div>
-</div>
+ <div class="footer">
+     <div class="copyright">
+         <p>Nino, Sem, Timo en Andy &copy; Geocaching Team</p>
+     </div>
+ </div>

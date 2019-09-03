@@ -100,7 +100,7 @@ textarea {
 body {
   position: relative;
   width: 100%;
-  height: 1024px;
+  height: 100%;
   background: #FFFFFF;
 }
 .navbar {
@@ -126,7 +126,7 @@ body {
 }
 .navbar .maps {
   position: absolute;
-  left: 330px;
+  left: 331px;
   top: 26px;
   font-family: Roboto;
   font-style: normal;
@@ -139,7 +139,7 @@ body {
   position: absolute;
   width: 84px;
   height: 24px;
-  left: 425px;
+  left: 421px;
   top: 26px;
   font-family: Roboto;
   font-style: normal;
@@ -148,24 +148,22 @@ body {
   line-height: 28px;
   color: #000000;
 }
-.navbar .login {
+.navbar .login-button {
   position: absolute;
   width: 165px;
   height: 44px;
-  left: 1233px;
+  left: 1137px;
   top: 18px;
-
   background: #FFFFFF;
   background-blend-mode: lighten;
   border-radius: 31px;
 }
-.navbar .login a {
+
+.navbar .login {
   position: absolute;
-  width: 68px;
-  height: 29px;
-  left: 1282px;
-  top: 26px;
-  font-family: Roboto;
+  left: 46px;
+  top: 6px;
+  font-family: Roboto serif;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -173,7 +171,62 @@ body {
   color: #000000;
 }
 
+.navbar .register {
+  position: absolute;
+  width: 148px;
+  height: 29px;
+  left: 1019px;
+  top: 26px;
+  font-family: Roboto serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+}
 
+.navbar a {
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   Main Section
+   ========================================================================== */
+
+  .container {
+    position: absolute;
+    width: 1031px;
+    height: 826px;
+    left: 214px;
+    top: 82px;
+    background: rgba(237, 237, 237, 0.49);
+  }
+
+/* ==========================================================================
+   Footer Section
+   ========================================================================== */
+ .footer {
+   position: absolute;
+   width: 100%;
+   height: 82px;
+   left: 0px;
+   top: 908px;
+   background: rgba(121, 84, 11, 0.77);
+ }
+
+ .copyright {
+   position: absolute;
+   width: 210px;
+   height: 25px;
+   left: 1308px;
+   top: 46px;
+   font-family: Roboto serif;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 11px;
+   line-height: 28px;
+   color: #000000;
+ }
 /* ==========================================================================
    Helper classes
    ========================================================================== */

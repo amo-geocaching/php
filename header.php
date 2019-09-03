@@ -17,20 +17,22 @@ if (session_status() == PHP_SESSION_NONE) {
 </head>
 <body>
     <header>
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="maps.php">Map</a></li>
-            <li><a href="informatie.php">Information</a></li>
-            <?php
-            if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-                echo "<li><a href='account.php'>Account</a></li>";
-                echo "<li><a href='controllers/logoutcontroller.php'>Logout</a></li>";
-            }
-            else{
-                echo "<li><a href='login.php'>Login</a></li>";
-                echo "<li><a href='register.php'>Register</a></li>";
-            }
-
+        <div class="navbar">
+            <ul>
+                <li><a href="index.php" class="home">Home</a></li>
+                <li><a href="maps.php" class="maps">Map</a></li>
+                <li><a href="informatie.php" class="info">Informatie</a></li>
+                <?php
+                if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+                    echo "<li><a href='account.php'>Account</a></li>";
+                    echo "<li><a href='controllers/logoutcontroller.php'>Logout</a></li>";
+                }
+                else{
+                    echo "<div class='login-button'>";
+                    echo "<li><a href='login.php' class='login'>Login</a></li>";
+                    echo "</div>";
+                    echo "<li><a href='register.php' class='register'>Register</a></li>";
+                }
                 ?>
             </ul>
         </div>
