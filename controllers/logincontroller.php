@@ -36,7 +36,7 @@ if ( $_POST['type'] == 'login' ) {
             $_SESSION['rank_id'] = 2;
             $_SESSION['rank'] = 'Admin';
         }
-        header("Location: ../index.php");
+        header("Location: http://localhost/PHP/geocache/index.php");
     }
     
 }

@@ -1,5 +1,5 @@
  <div class="footer">
      <div class="copyright">
-         <p>Nino, Sem, Timo en Andy &copy; Geocaching Team</p>
+         <p>&copy;Minecraft Fanboys</p>
      </div>
  </div>

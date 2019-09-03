@@ -171,9 +171,35 @@ body {
   color: #000000;
 }
 
+.navbar .logout {
+  position: absolute;
+  left: 48px;
+  top: 6px;
+  font-family: Roboto serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+}
+
 .navbar .register {
   position: absolute;
   width: 148px;
+  height: 29px;
+  left: 1019px;
+  top: 26px;
+  font-family: Roboto serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+}
+
+.navbar .account {
+  position: absolute;
+  width: 100px;
   height: 29px;
   left: 1019px;
   top: 26px;
@@ -208,22 +234,21 @@ body {
  .footer {
    position: absolute;
    width: 100%;
-   height: 82px;
-   left: 0px;
+   height: 86px;
    top: 908px;
    background: rgba(121, 84, 11, 0.77);
  }
 
  .copyright {
    position: absolute;
-   width: 210px;
+   width: 110px;
    height: 25px;
-   left: 1308px;
+   left: 1403px;
    top: 46px;
    font-family: Roboto serif;
    font-style: normal;
    font-weight: normal;
-   font-size: 11px;
+   font-size: 13px;
    line-height: 28px;
    color: #000000;
  }
