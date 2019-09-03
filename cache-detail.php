@@ -20,7 +20,7 @@ $logdate = $cacheinfo['logdate'];
 ?>
 <main>
     <?php
-    if (!isset($cacheinfo)){?>
+    if ($cacheinfo == false){?>
         <form action="cache-controller.php" method="post">
             <input type="hidden" name="logcache" value="1">
             <input id="submit" type="submit" value="Log">
@@ -28,7 +28,17 @@ $logdate = $cacheinfo['logdate'];
     <?php
     }
     else{
-        echo "<p>Je hebt deze cache gelogt op $logdate</p>";
+        echo "<h3>Je hebt deze cache gelogt op $logdate</h3>";
+        ?>
+        <form action="cache-controller.php" method="post">
+            <input type="number" min="0" max="5" name="rating">
+            <input id="submit" type="submit" value="Log">
+        </form>
+        <form action="cache-controller.php" method="post">
+            <input type="text" maxlength="500" name="comment">
+            <input id="submit" type="submit" value="Log">
+        </form>
+        <?php
     }?>
 
 </main>
