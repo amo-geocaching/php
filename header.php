@@ -24,8 +24,10 @@ if (session_status() == PHP_SESSION_NONE) {
                 <li><a href="informatie.php" class="info">Informatie</a></li>
                 <?php
                 if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-                    echo "<li><a href='account.php'>Account</a></li>";
-                    echo "<li><a href='controllers/logoutcontroller.php'>Logout</a></li>";
+                    echo "<li><a href='account.php' class='register'>Account</a></li>";
+                    echo "<div class='login-button'>";
+                    echo "<li><a href='controllers/logoutcontroller.php' class='login'>Logout</a></li>";
+                    echo "</div>";
                 }
                 else{
                     echo "<div class='login-button'>";
