@@ -3,7 +3,6 @@ require 'config.php';
 $sql = "SELECT * FROM caches";
 $query = $db->query($sql);
 $caches = $query->fetchAll(PDO:: FETCH_ASSOC);
-$length = count($caches);
 
 require 'header.php';
 ?>
@@ -19,8 +18,6 @@ require 'header.php';
                 zoom:5,
             };
             let map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-            let length = <?php echo $length?>;
 
             <?php
             $js_caches = json_encode($caches);
