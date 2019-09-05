@@ -13,6 +13,7 @@ require 'config.php';
 $userid = $_SESSION['id'];
 $cacheid = $_SESSION['cacheid'];
 $logdate = date("Y/m/d");
+$cachename = $_SESSION['cachename'];
 
 if(isset($_POST['logcache'])){
     $sql = "INSERT INTO logs (cacheid, userid, logdate)
@@ -45,4 +46,21 @@ else if(isset($_POST['comment']) && strlen($_POST['comment']) <= 500){
 }
 else{
     echo 'Er is een fout opgetreden';
+}
+
+if ($_POST['type'] === 'createcache') {
+    $cachename = $_POST['cachename'];
+    $cacheid = $_SESSION['cacheid'];
+
+    $sql = "INSERT INTO caches (cachename, cacheid) VALUES (:cachename, :cacheid)";
+    $prepare = $db->prepare($sql);
+    $prepare->execute([
+        ':cachename' => $cachename,
+        ':cacheid' => $cacheid
+    ]);
+
+    $msg = "Cache is succesvol aangemaakt!";
+
+    header("location: index.php?msg=$msg");
+    exit;
 }
