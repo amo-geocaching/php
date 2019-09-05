@@ -8,7 +8,7 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-require 'config.php';
+require '../config.php';
 
 $userid = $_SESSION['id'];
 $cacheid = $_SESSION['cacheid'];
@@ -24,7 +24,7 @@ if(isset($_POST['logcache'])){
         'userid'    => $userid,
         'logdate'   => $logdate
     ]);
-    header("Location: cache-detail.php?cacheid=$cacheid");
+    header("Location: ../cache-detail.php?cacheid=$cacheid");
 }
 else if(isset($_POST['rating']) && $_POST['rating'] <= 5 && $_POST['rating'] >= 0){
     $sql = "UPDATE logs SET rating = :rating WHERE cacheid = :cacheid";
@@ -33,7 +33,7 @@ else if(isset($_POST['rating']) && $_POST['rating'] <= 5 && $_POST['rating'] >= 
         ':rating'   => $_POST['rating'],
         ':cacheid'  => $cacheid
     ]);
-    header("Location: cache-detail.php?cacheid=$cacheid");
+    header("Location: ../cache-detail.php?cacheid=$cacheid");
 }
 else if(isset($_POST['comment']) && strlen($_POST['comment']) <= 500){
     $sql = "UPDATE logs SET comment = :comment WHERE cacheid = :cacheid";
@@ -42,7 +42,7 @@ else if(isset($_POST['comment']) && strlen($_POST['comment']) <= 500){
         ':comment'   => $_POST['comment'],
         ':cacheid'  => $cacheid
     ]);
-    header("Location: cache-detail.php?cacheid=$cacheid");
+    header("Location: ../cache-detail.php?cacheid=$cacheid");
 }
 else{
     echo 'Er is een fout opgetreden';
@@ -61,6 +61,6 @@ if ($_POST['type'] === 'createcache') {
 
     $msg = "Cache is succesvol aangemaakt!";
 
-    header("location: index.php?msg=$msg");
+    header("location: ../index.php?msg=$msg");
     exit;
 }
