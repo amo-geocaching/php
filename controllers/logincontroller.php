@@ -38,7 +38,10 @@ if ( $_POST['type'] == 'login' ) {
         }
         header("Location: ../index.php");
     }
-    
+    else{
+        echo 'Je wachtwoord is fout, je word nu teruggestuurd';
+        header("refresh:4;url=../index.php");
+    }
 }
 
 if ($_POST['type'] == 'register') {

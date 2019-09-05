@@ -37,7 +37,9 @@ require 'header.php';
                     id: i
 
                 });
-
+                marker[i].addListener('click', function () {
+                    window.location = "cache-detail.php?cacheid=" + jscaches[i].cacheid;
+                });
             }
 
         }
