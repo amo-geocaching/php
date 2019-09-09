@@ -98,7 +98,7 @@ textarea {
    Author's custom styles
    ========================================================================== */
 body {
-  position: relative;
+  position: relative; 
   width: 100%;
   height: 100%;
   background: #FFFFFF;
@@ -140,6 +140,19 @@ body {
   width: 84px;
   height: 24px;
   left: 421px;
+  top: 26px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+}
+.navbar .cache {
+  position: absolute;
+  width: 84px;
+  height: 24px;
+  left: 547px;
   top: 26px;
   font-family: Roboto;
   font-style: normal;
