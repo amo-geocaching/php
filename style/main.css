@@ -213,6 +213,49 @@ body {
     top: 82px;
     background: rgba(237, 237, 237, 0.49);
   }
+  .main-form {
+    position: absolute;
+    width: 726px;
+    height: 620px;
+    left: 169px;
+    top: 105px;
+    background: rgba(161, 163, 161, 0.41);
+    border: 4px solid #00811C;
+    box-sizing: border-box;
+    border-radius: 70px;
+}
+  .title-form {
+    position: absolute;
+    width: 105px;
+    height: 46px;
+    left: 300px;
+    top: 30px;
+    font-family: Roboto serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    color: #000000;
+  }
+
+  .username {
+    position: absolute;
+    width: 391px;
+    height: 24px;
+    left: 180px;
+    top: 200px;
+    background: #FFFFFF;
+    border-radius: 11px;
+  }
+
+  .password {
+    position: absolute;
+    width: 391px;
+    height: 24px;
+    left: 180px;
+    top: 300px;
+    background: #FFFFFF;
+  }
 
 /* ==========================================================================
    Footer Section
