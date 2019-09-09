@@ -22,6 +22,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 <li><a href="index.php" class="home">Home</a></li>
                 <li><a href="maps.php" class="maps">Map</a></li>
                 <li><a href="informatie.php" class="info">Informatie</a></li>
+                <li><a href="cache-list.php" class="cache">Caches</a></li>
                 <?php
                 if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
                     echo "<li><a href='account.php' class='register'>Account</a></li>";
