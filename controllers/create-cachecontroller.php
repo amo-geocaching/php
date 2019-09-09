@@ -20,7 +20,7 @@ if ($_POST['type'] === 'createcache') {
             VALUES (:cachename, :description, :coordinateX, :coordinateY, :difficulty, :rating, :properties, :tip)";
     $prepare = $db->prepare($sql);
     $prepare->execute([
-        ':cachename'    => $cachename,
+        ':cachename'    => $cachename,   
         ':description'  => $description,
         ':coordinateX'  => $coordinateX,
         ':coordinateY'  => $coordinateY,
