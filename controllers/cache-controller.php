@@ -13,7 +13,6 @@ require '../config.php';
 $userid = $_SESSION['id'];
 $cacheid = $_SESSION['cacheid'];
 $logdate = date("Y/m/d");
-$cachename = $_SESSION['cachename'];
 
 if(isset($_POST['logcache'])){
     $sql = "INSERT INTO logs (cacheid, userid, logdate)
@@ -26,13 +25,35 @@ if(isset($_POST['logcache'])){
     ]);
     header("Location: ../cache-detail.php?cacheid=$cacheid");
 }
-else if(isset($_POST['rating']) && $_POST['rating'] <= 5 && $_POST['rating'] >= 0){
-    $sql = "UPDATE logs SET rating = :rating WHERE cacheid = :cacheid";
+else if(isset($_POST['rating']) && $_POST['rating'] <= 5 && $_POST['rating'] >= 0 && is_numeric($_POST['rating'])){
+    $sql = "UPDATE logs SET rating = :rating WHERE cacheid = :cacheid AND userid = :userid";
     $prepare = $db->prepare($sql);
     $prepare->execute([
         ':rating'   => $_POST['rating'],
+        ':cacheid'  => $cacheid,
+        ':userid'   => $userid
+    ]);
+    //calculate rating and update new cache rating
+    $sql = "SELECT rating FROM logs WHERE cacheid = :cacheid";
+    $prepare = $db->prepare($sql);
+    $prepare->execute([
         ':cacheid'  => $cacheid
     ]);
+    $rating = $prepare->fetchAll(PDO::FETCH_ASSOC);
+    $totalRating = 0;
+    foreach($rating as $rate){
+        $totalRating += $rate['rating'];
+    }
+
+    $newRating = $totalRating / count($rating);
+    var_dump($rating);
+    $sql = "UPDATE caches SET rating = :rating WHERE cacheid = :cacheid";
+    $prepare = $db->prepare($sql);
+    $prepare->execute([
+        ':rating'   => $newRating,
+        ':cacheid'  => $cacheid
+    ]);
+
     header("Location: ../cache-detail.php?cacheid=$cacheid");
 }
 else if(isset($_POST['comment']) && strlen($_POST['comment']) <= 500){
@@ -46,21 +67,4 @@ else if(isset($_POST['comment']) && strlen($_POST['comment']) <= 500){
 }
 else{
     echo 'Er is een fout opgetreden';
-}
-
-if ($_POST['type'] === 'createcache') {
-    $cachename = $_POST['cachename'];
-    $cacheid = $_SESSION['cacheid'];
-
-    $sql = "INSERT INTO caches (cachename, cacheid) VALUES (:cachename, :cacheid)";
-    $prepare = $db->prepare($sql);
-    $prepare->execute([
-        ':cachename' => $cachename,
-        ':cacheid' => $cacheid
-    ]);
-
-    $msg = "Cache is succesvol aangemaakt!";
-
-    header("location: ../index.php?msg=$msg");
-    exit;
 }
