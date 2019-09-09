@@ -7,15 +7,15 @@
  */
 
 require 'header.php';
-if($_SESSION['loggedin'] == true){
-    $_SESSION['cacheid'] = $_GET['cacheid'];
+if($_SESSION['loggedin'] == true) {
+$_SESSION['cacheid'] = $_GET['cacheid'];
 
-    $sql = "SELECT * FROM caches WHERE cacheid = :cacheid";
-    $prepare = $db->prepare($sql);
-    $prepare->execute([
-        ':cacheid' => $_GET['cacheid']
-    ]);
-    $caches = $prepare->fetch(PDO::FETCH_ASSOC);
+$sql = "SELECT * FROM caches WHERE cacheid = :cacheid";
+$prepare = $db->prepare($sql);
+$prepare->execute([
+    ':cacheid' => $_GET['cacheid']
+]);
+$caches = $prepare->fetch(PDO::FETCH_ASSOC);
 
     $sql = "SELECT * FROM logs WHERE userid = :userid AND cacheid = :cacheid";
     $prepare = $db->prepare($sql);

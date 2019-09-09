@@ -26,6 +26,12 @@ echo "<h2>$username</h2>";
 echo "<h3>$rank</h3>";
 ?>
     <a href="submit-email.php">Account aanpassen</a>
+
+    <?php
+    if ($_SESSION['loggedin'] == true) {
+    echo "<a href='admin.php'>Make Caches</a>";
+    }
+    ?>
 </main>
 </body>
 <?php require 'footer.php'?>
