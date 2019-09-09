@@ -15,7 +15,7 @@ $prepare->execute([
 $user = $prepare->fetch(PDO::FETCH_ASSOC);
 $username = $user['username'];
 $rank = $_SESSION['rank'];
-
+$_SESSION['rankid'] = $user['rank'];
 require 'header.php';
 
 ?>
@@ -28,7 +28,7 @@ echo "<h3>$rank</h3>";
     <a href="submit-email.php">Account aanpassen</a>
 
     <?php
-    if ($_SESSION['loggedin'] == true) {
+    if ($_SESSION['loggedin'] == true && $user['rank'] > 0) {
     echo "<a href='admin.php'>Make Caches</a>";
     }
     ?>
