@@ -227,6 +227,34 @@ body {
     background: rgba(237, 237, 237, 0.49);
   }
 
+/*=======cache-detail==========*/
+
+  .detail-main{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .middle{
+    width: 100%;
+    height: 826px;
+    background: #f6f6f6;
+    text-align: center;
+    display: flex;
+  }
+  .side{
+    width: 20%;
+  }
+  .detail-info, .detail-logging{
+    margin: 40px;
+  }
+  .detail-logging{
+    padding: 2%;
+    border-left: grey solid;
+  }
+  .detail-info{
+    width: 70%;
+  }
+
 /* ==========================================================================
    Footer Section
    ========================================================================== */

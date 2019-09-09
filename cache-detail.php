@@ -27,34 +27,58 @@ if($_SESSION['loggedin'] == true){
     $logdate = $cacheinfo['logdate'];
     ?>
     <main>
-        <?php
-        if(isset($caches['cacheid'])){
-            if ($cacheinfo == false){?>
-                <form action="controllers/cache-controller.php" method="post">
-                    <input type="hidden" name="logcache" value="1">
-                    <input id="submit" type="submit" value="Log">
-                </form>
-                <?php
-            }
-            else {
-                echo "<h3>Je hebt deze cache gelogt op $logdate</h3>";
-                ?>
-                <form action="controllers/cache-controller.php" method="post">
-                    <input type="number" min="0" max="5" name="rating">
-                    <input id="submit" type="submit" value="Log">
-                </form>
-                <form action="controllers/cache-controller.php" method="post">
-                    <input type="text" maxlength="500" name="comment">
-                    <input id="submit" type="submit" value="Log">
-                </form>
-                <?php
-            }
-        }else{
-            echo 'Deze cache bestaat niet!';
-        }?>
+        <div class="detail-main">
+            <div class="side">
 
+            </div>
+            <div class="middle">
+                <div class="detail-info">
+                    <?php
+                    $cachename = $caches['cachename'];
+                    $rating = $caches['rating'];
+                    $description = $caches['description'];
+                    $properties = $caches['properties'];
+                    $tip = $caches['tip'];
 
+                    echo "<h1>$cachename</h1>";
+                    echo "<p>$rating</p>";
+                    echo "<p>$description</p>";
+                    echo "<p>Eigenschappen: $properties</p>";
+                    echo "<p>Tip: $tip</p>";
+                    ?>
+                </div>
+                <div class="detail-logging">
+                    <?php
+                    if(isset($caches['cacheid'])){
+                        if ($cacheinfo == false){?>
+                            <form action="controllers/cache-controller.php" method="post">
+                                <input type="hidden" name="logcache" value="1">
+                                <input id="submit" type="submit" value="Log">
+                            </form>
+                            <?php
+                        }
+                        else {
+                            echo "<h3>Je hebt deze cache gelogt op $logdate</h3>";
+                            ?>
+                            <form action="controllers/cache-controller.php" method="post">
+                                <input type="number" min="0" max="5" name="rating">
+                                <input id="submit" type="submit" value="Rate">
+                            </form>
+                            <form action="controllers/cache-controller.php" method="post">
+                                <input type="text" maxlength="500" name="comment">
+                                <input id="submit" type="submit" value="Comment">
+                            </form>
+                            <?php
+                        }
+                    }else{
+                        echo 'Deze cache bestaat niet!';
+                    }?>
 
+                </div>
+            </div>
+            <div class="side">
+            </div>
+        </div>
     </main>
 
 <?php }else if($_SESSION['loggedin'] == false){
