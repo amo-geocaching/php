@@ -1,6 +1,6 @@
 <?php
 require 'config.php';
-$sql = "SELECT caches.*, logs.userid FROM caches LEFT JOIN logs ON caches.cacheid = logs.cacheid";
+$sql = "SELECT caches.*, logs.userid, logs.isFound FROM caches LEFT JOIN logs ON caches.cacheid = logs.cacheid";
 $query = $db->query($sql);
 $caches = $query->fetchAll(PDO:: FETCH_ASSOC);
 $user = $_SESSION['id'];
@@ -34,14 +34,17 @@ require 'header.php';
 
                 let icon;
                 let name;
-                if(jscaches[i].userid == userid){
+                if(jscaches[i].userid == userid && jscaches[i].isFound == true){
                     icon = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
                     name = "Gevonden: ";
+                }
+                else if(jscaches[i].userid == userid && jscaches[i].isFound == false){
+                    icon = "http://maps.google.com/mapfiles/ms/icons/orange-dot.png";
+                    name = "Niet gevonden: ";
                 }
                 else{
                     icon = "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
                     name = "";
-
                 }
                 marker[i] = new google.maps.Marker({
                     position: myLatLng,

@@ -15,13 +15,14 @@ $cacheid = $_SESSION['cacheid'];
 $logdate = date("Y/m/d");
 
 if(isset($_POST['logcache'])){
-    $sql = "INSERT INTO logs (cacheid, userid, logdate)
-                       VALUES (:cacheid, :userid, :logdate)";
+    $sql = "INSERT INTO logs (cacheid, userid, logdate, isFound)
+                       VALUES (:cacheid, :userid, :logdate, :isFound)";
     $prepare = $db->prepare($sql);
     $prepare->execute([
         'cacheid'   => $cacheid,
         'userid'    => $userid,
-        'logdate'   => $logdate
+        'logdate'   => $logdate,
+        'isFound'   => $_POST['found']
     ]);
     header("Location: ../cache-detail.php?cacheid=$cacheid");
 }

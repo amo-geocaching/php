@@ -17,7 +17,7 @@ $username = $user['username'];
 $rank = $_SESSION['rank'];
 $_SESSION['rankid'] = $user['rank'];
 
-$sql = "SELECT caches.*, logs.userid FROM caches INNER JOIN logs ON caches.cacheid = logs.cacheid";
+$sql = "SELECT caches.*, logs.userid, logs.isFound FROM caches INNER JOIN logs ON caches.cacheid = logs.cacheid WHERE logs.IsFound = true ";
 $query = $db->query($sql);
 $caches = $query->fetchAll(PDO::FETCH_ASSOC);
 require 'header.php';

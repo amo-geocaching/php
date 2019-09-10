@@ -53,7 +53,13 @@ $caches = $prepare->fetch(PDO::FETCH_ASSOC);
                         if ($cacheinfo == false){?>
                             <form action="controllers/cache-controller.php" method="post">
                                 <input type="hidden" name="logcache" value="1">
-                                <input id="submit" type="submit" value="Log">
+                                <input type="hidden" name="found" value="1">
+                                <input id="submit" type="submit" value="Gevonden">
+                            </form>
+                            <form action="controllers/cache-controller.php" method="post">
+                                <input type="hidden" name="logcache" value="1">
+                                <input type="hidden" name="found" value="0">
+                                <input id="submit" type="submit" value="Niet gevonden">
                             </form>
                             <?php
                         }

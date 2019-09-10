@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: timo0
- * Date: 29-8-2019
- * Time: 12:18
- */
-
 
 require 'header.php'?>
 <main>
