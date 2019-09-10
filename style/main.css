@@ -117,7 +117,7 @@ body {
   position: absolute;
   left: 230px;
   top: 25px;
-  font-family: Roboto;
+  font-family: Roboto serif;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -128,7 +128,7 @@ body {
   position: absolute;
   left: 331px;
   top: 26px;
-  font-family: Roboto;
+  font-family: Roboto serif;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -141,7 +141,7 @@ body {
   height: 24px;
   left: 421px;
   top: 26px;
-  font-family: Roboto;
+  font-family: Roboto serif;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -154,7 +154,7 @@ body {
   height: 24px;
   left: 547px;
   top: 26px;
-  font-family: Roboto;
+  font-family: Roboto serif;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -163,38 +163,17 @@ body {
 }
 .navbar .login-button {
   position: absolute;
-  width: 165px;
-  height: 44px;
-  left: 1137px;
-  top: 18px;
+  width: 180px;
+  height: 40px;
+  left: 1146px;
+  top: 22px;
+  font-family: Roboto serif;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
   background: #FFFFFF;
-  background-blend-mode: lighten;
-  border-radius: 31px;
-}
-
-.navbar .login {
-  position: absolute;
-  left: 46px;
-  top: 6px;
-  font-family: Roboto serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 28px;
-  color: #000000;
-
-}
-
-.navbar .logout {
-  position: absolute;
-  left: 46px;
-  top: 6px;
-  font-family: Roboto serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 28px;
-  color: #000000;
+  border-style: none;
+  border-radius: 13px;
 }
 
 .navbar .register {
@@ -233,7 +212,7 @@ body {
     height: 620px;
     left: 169px;
     top: 105px;
-    background: rgba(198, 204, 198);
+    background: rgb(198, 204, 198);
     border: 4px solid #00811C;
     box-sizing: border-box;
     border-radius: 70px;
@@ -350,7 +329,6 @@ body {
    position: absolute;
    width: 100%;
    height: 82px;
-   left: 0px;
    top: 908px;
    background: rgba(121, 84, 11, 0.77);
  }

@@ -26,18 +26,14 @@ if (session_status() == PHP_SESSION_NONE) {
                 <?php
                 if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
                     echo "<li><a href='account.php' class='register'>Account</a></li>";
-                    echo "<div class='login-button'>";
-                    echo "<li><a href='controllers/logoutcontroller.php' class='login'>Logout</a></li>";
-                    echo "</div>";
+                    echo "<button class=\"login-button\"  id=\"logout\" onclick=\"window.location.href = './controllers/logoutcontroller.php';\">Logout</button>";
                 }
                 else{
-                    echo "<div class='login-button'>";
-                    echo "<li><a href='login.php' class='login'>Login</a></li>";
-                    echo "</div>";
+                    echo "<button class=\"login-button\"  id=\"login\" onclick=\"window.location.href = 'login.php';\">Login</button>";
                     echo "<li><a href='register.php' class='register'>Register</a></li>";
                 }
                 ?>
-            </ul>
+            </ul
         </div>
 
     </header>
