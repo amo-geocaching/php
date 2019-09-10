@@ -1,9 +1,9 @@
 <?php
 require 'config.php';
-$sql = "SELECT * FROM caches";
+$sql = "SELECT caches.*, logs.userid FROM caches LEFT JOIN logs ON caches.cacheid = logs.cacheid";
 $query = $db->query($sql);
 $caches = $query->fetchAll(PDO:: FETCH_ASSOC);
-
+$user = $_SESSION['id'];
 require 'header.php';
 ?>
 <main>
@@ -21,7 +21,9 @@ require 'header.php';
 
             <?php
             $js_caches = json_encode($caches);
+            $user = json_encode($user);
             echo "let jscaches = ". $js_caches . ";\n";
+            echo "let userid = ". $user . ";\n";
             ?>
             let marker = [];
 
@@ -29,12 +31,27 @@ require 'header.php';
                 let latitude = parseFloat(jscaches[i].coordinateY);
                 let longitude = parseFloat(jscaches[i].coordinateX);
                 let myLatLng = {lat: latitude, lng: longitude};
+
+                let icon;
+                let name;
+                if(jscaches[i].userid == userid){
+                    icon = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
+                    name = "Gevonden: ";
+                }
+                else{
+                    icon = "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
+                    name = "";
+
+                }
                 marker[i] = new google.maps.Marker({
                     position: myLatLng,
                     map: map,
                     description: jscaches[i].description,
-                    title: jscaches[i].cachename,
-                    id: i
+                    title: name + jscaches[i].cachename,
+                    id: i,
+                    icon: {
+                        url: icon
+                    }
 
                 });
                 marker[i].addListener('click', function () {
