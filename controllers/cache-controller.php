@@ -69,3 +69,34 @@ else if(isset($_POST['comment']) && strlen($_POST['comment']) <= 500){
 else{
     echo 'Er is een fout opgetreden';
 }
+
+if ($_POST['type'] === 'createcache') {
+    $cachename = $_POST['cachename'];
+    $cacheid = $_SESSION['cacheid'];
+
+    $sql = "INSERT INTO caches (cachename, cacheid) VALUES (:cachename, :cacheid)";
+    $prepare = $db->prepare($sql);
+    $prepare->execute([
+        ':cachename' => $cachename,
+        ':cacheid' => $cacheid
+    ]);
+
+    $msg = "Cache is succesvol aangemaakt!";
+
+    header("location: ../index.php?msg=$msg");
+    exit;
+}
+
+if ($_POST['type'] === 'delete') {
+    $cacheid = $_SESSION['cacheid'];
+    $sql = "DELETE FROM caches WHERE cacheid= :cacheid";
+    $prepare = $db->prepare($sql);
+    $prepare->execute([
+        ':cacheid' => $cacheid
+    ]);
+
+    $msg = "Cache is succesvol verwijderd!";
+
+    header("location: ../index.php?msg=$msg");
+    exit;
+}

@@ -61,6 +61,18 @@ $caches = $prepare->fetch(PDO::FETCH_ASSOC);
                                 <input type="hidden" name="found" value="0">
                                 <input id="submit" type="submit" value="Niet gevonden">
                             </form>
+
+                            <?php
+                            if ( $_SESSION['loggedin'] == true ) {
+                                ?>
+                                <form action="controllers/cache-controller.php" method="post">
+                                    <input type="hidden" name="type" value="delete">
+                                    <input type="submit" value="Delete this Cache">
+                                </form>
+                                <?php
+                            }
+                            ?>
+
                             <?php
                         }
                         else {
@@ -74,6 +86,7 @@ $caches = $prepare->fetch(PDO::FETCH_ASSOC);
                                 <input type="text" maxlength="500" name="comment">
                                 <input id="submit" type="submit" value="Comment">
                             </form>
+
                             <?php
                         }
                     }else{
