@@ -182,6 +182,7 @@ body {
   font-size: 24px;
   line-height: 28px;
   color: #000000;
+
 }
 
 .navbar .logout {
@@ -232,7 +233,7 @@ body {
     height: 620px;
     left: 169px;
     top: 105px;
-    background: rgba(161, 163, 161, 0.41);
+    background: rgba(198, 204, 198);
     border: 4px solid #00811C;
     box-sizing: border-box;
     border-radius: 70px;
@@ -244,10 +245,7 @@ body {
     left: 300px;
     top: 30px;
     font-family: Roboto serif;
-    font-style: normal;
-    font-weight: normal;
     font-size: 36px;
-    line-height: 42px;
     color: #000000;
   }
 
@@ -259,6 +257,7 @@ body {
     top: 200px;
     background: #FFFFFF;
     border-radius: 11px;
+    border-color: #00811C;
   }
 
   .password {
@@ -268,6 +267,52 @@ body {
     left: 180px;
     top: 300px;
     background: #FFFFFF;
+    border-radius: 11px;
+    border-color: #00811C;
+  }
+
+  .UserLabel {
+    position: absolute;
+    left: 290px;
+    top: 172px;
+    font-family: Roboto serif;
+    font-size: 24px;
+    color: #000000;
+  }
+
+  .PassLabel {
+    position: absolute;
+    left: 304px;
+    top: 272px;
+    font-family: Roboto serif;
+    font-size: 24px;
+    color: #000000;
+  }
+
+  .loginbutton {
+    position: absolute;
+    left: 245px;
+    top: 354px;
+    font-family: Roboto serif;
+    font-size: 18px;
+    color: black;
+    border-radius: 15px;
+    border-color: #00811C;
+    background: #FFFFFF;
+    width: 262px;
+  }
+
+  .forgotbutton {
+    position: absolute;
+    left: 245px;
+    top: 400px;
+    font-family: Roboto serif;
+    font-size: 18px;
+    color: black;
+    border-radius: 15px;
+    border-color: #00811C;
+    background: #FFFFFF;
+    width: 262px;
   }
 
 /*=======cache-detail==========*/
