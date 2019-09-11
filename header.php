@@ -13,6 +13,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./style/main.css">
     <link rel="stylesheet" href="./style/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
     <title>Geocaching</title>
 </head>
 <body>
