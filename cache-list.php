@@ -13,6 +13,7 @@ $caches = $query->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div class="middle">
             <ul class="cachelist">
+                <h2>Caches</h2>
                 <?php
                 foreach ($caches as $cache){
                     $found = "";
