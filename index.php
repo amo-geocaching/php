@@ -9,7 +9,7 @@ require 'header.php';
         </div>
         <div class="middle">
 
-            
+
 
 
         </div>
