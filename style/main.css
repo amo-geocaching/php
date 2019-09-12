@@ -101,7 +101,8 @@ body {
   position: relative; 
   width: 100%;
   height: 100%;
-  background: #FFFFFF;
+  background-image: url("img/bos.jpg");
+  font-family: "Century Gothic", sans-serif;
 }
 .navbar {
   position: relative;
@@ -119,7 +120,6 @@ body {
   position: absolute;
   left: 230px;
   top: 25px;
-  font-family: Roboto serif;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -130,7 +130,6 @@ body {
   position: absolute;
   left: 331px;
   top: 26px;
-  font-family: Roboto serif;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -143,7 +142,6 @@ body {
   height: 24px;
   left: 421px;
   top: 26px;
-  font-family: Roboto serif;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -154,9 +152,8 @@ body {
   position: absolute;
   width: 84px;
   height: 24px;
-  left: 547px;
+  left: 569px;
   top: 26px;
-  font-family: Roboto serif;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -169,7 +166,6 @@ body {
   height: 40px;
   left: 1146px;
   top: 22px;
-  font-family: Roboto serif;
   font-size: 24px;
   line-height: 28px;
   color: #000000;
@@ -184,7 +180,6 @@ body {
   height: 29px;
   left: 1019px;
   top: 26px;
-  font-family: Roboto serif;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -202,11 +197,11 @@ body {
 
   .container {
     position: absolute;
-    width: 1031px;
+    width: 1080px;
     height: 826px;
-    left: 214px;
+    left: 210px;
     top: 82px;
-    background: rgba(237, 237, 237, 0.49);
+    background: rgb(237, 237, 237);
   }
   .main-form {
     position: absolute;
@@ -225,7 +220,6 @@ body {
     height: 46px;
     left: 300px;
     top: 30px;
-    font-family: Roboto serif;
     font-size: 36px;
     color: #000000;
   }
@@ -256,7 +250,6 @@ body {
     position: absolute;
     left: 290px;
     top: 172px;
-    font-family: Roboto serif;
     font-size: 24px;
     color: #000000;
   }
@@ -265,7 +258,6 @@ body {
     position: absolute;
     left: 304px;
     top: 272px;
-    font-family: Roboto serif;
     font-size: 24px;
     color: #000000;
   }
@@ -274,7 +266,6 @@ body {
     position: absolute;
     left: 245px;
     top: 354px;
-    font-family: Roboto serif;
     font-size: 18px;
     color: black;
     border-radius: 15px;
@@ -287,7 +278,6 @@ body {
     position: absolute;
     left: 245px;
     top: 400px;
-    font-family: Roboto serif;
     font-size: 18px;
     color: black;
     border-radius: 15px;
@@ -365,11 +355,15 @@ body {
  .footer {
    position: absolute;
    width: 100%;
-   height: 82px;
+   height: 85px;
    top: 908px;
+<<<<<<< HEAD
+=======
    background: #987c43;
+>>>>>>> master
    box-shadow: black 0px 0px 4px;
    z-index: 9;
+   background: rgb(121, 84, 11);
  }
 
  .copyright {
@@ -378,7 +372,6 @@ body {
    height: 25px;
    left: 1308px;
    top: 46px;
-   font-family: Roboto serif;
    font-style: normal;
    font-weight: normal;
    font-size: 11px;

@@ -1,7 +1,11 @@
 <?php
 require 'header.php';
 ?>
+<div class="container">
 
+<<<<<<< HEAD
+</div>
+=======
 <main>
     <div class="detail-main">
         <div class="side">
@@ -19,6 +23,7 @@ require 'header.php';
     </div>
 </main>
 
+>>>>>>> master
 <?php
 require 'footer.php';
 ?>
