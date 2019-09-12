@@ -302,15 +302,17 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    background-image: url("../img/panorama-1080.jpg");
+    background-size: cover;
   }
   .middle{
     width: 100%;
     height: 826px;
-    background: #F0F0F0;
+    background: #fffffa;
     text-align: center;
     display: flex;
-    border-left: double #E0E0E0 12px;
-    border-right: double #E0E0E0 12px;
+    border-left: double tan 12px;
+    border-right: double tan 12px;
 
   }
   .side{
