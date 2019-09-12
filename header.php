@@ -19,22 +19,29 @@ if (session_status() == PHP_SESSION_NONE) {
 <body>
     <header>
         <div class="navbar">
-            <ul>
-                <li><a href="index.php" class="home">Home</a></li>
-                <li><a href="maps.php" class="maps">Map</a></li>
-                <li><a href="informatie.php" class="info">Informatie</a></li>
-                <li><a href="cache-list.php" class="cache">Caches</a></li>
-                <?php
-                if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-                    echo "<li><a href='account.php' class='register'>Account</a></li>";
-                    echo "<button class=\"login-button\"  id=\"logout\" onclick=\"window.location.href = './controllers/logoutcontroller.php';\">Logout</button>";
-                }
-                else{
-                    echo "<button class=\"login-button\"  id=\"login\" onclick=\"window.location.href = 'login.php';\">Login</button>";
-                    echo "<li><a href='register.php' class='register'>Register</a></li>";
-                }
-                ?>
-            </ul
+            <nav>
+                <ul>
+                    <li><a href="index.php" class="home">Home</a></li>
+                    <li><a href="maps.php" class="maps">Map</a></li>
+                    <li><a href="informatie.php" class="info">Informatie</a></li>
+                    <li><a href="cache-list.php" class="cache">Caches</a></li>
+                </ul>
+            </nav>
+            <div class="login">
+                <ul>
+                    <?php
+                    if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+                        echo "<li><a href='account.php' class='register'>Account</a></li>";
+                        echo "<li><button class=\"login-button\"  id=\"logout\" onclick=\"window.location.href = './controllers/logoutcontroller.php';\">Logout</button></li>";
+                    }
+                    else{
+                        echo "<li><button class=\"login-button\"  id=\"login\" onclick=\"window.location.href = 'login.php';\">Login</button></li>";
+                        echo "<li><a href='register.php' class='register'>Register</a></li>";
+                    }
+                    ?>
+                </ul
+            </div>
+
         </div>
 
     </header>

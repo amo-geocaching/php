@@ -98,186 +98,80 @@ textarea {
    Author's custom styles
    ========================================================================== */
 body {
-  position: relative; 
-  width: 100%;
-  height: 100%;
-  background-image: url("img/bos.jpg");
-  font-family: "Century Gothic", sans-serif;
-}
+   font-family: "Century Gothic", sans-serif;
+ }
 .navbar {
   position: relative;
-  margin-top: -17px;
-  width: 100%;
-  height: 82px;
+  height: 100%;
   background: #339933;
-  box-shadow: black 0px 0px 4px;
   z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 0px 4px black;
+  font-size: 1.4em;
 }
-.navbar li {
+.navbar ul{
+  display: flex;
+  justify-content: space-between;
+}
+.navbar * {
   list-style: none;
 }
-.navbar .home {
-  position: absolute;
-  left: 230px;
-  top: 25px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 28px;
-  color: #000000;
-}
-.navbar .maps {
-  position: absolute;
-  left: 331px;
-  top: 26px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 28px;
-  color: #000000;
-}
-.navbar .info {
-  position: absolute;
-  width: 84px;
-  height: 24px;
-  left: 421px;
-  top: 26px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 28px;
-  color: #000000;
-}
-.navbar .cache {
-  position: absolute;
-  width: 84px;
-  height: 24px;
-  left: 569px;
-  top: 26px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 28px;
-  color: #000000;
-}
-.navbar .login-button {
-  position: absolute;
-  width: 180px;
-  height: 40px;
-  left: 1146px;
-  top: 22px;
-  font-size: 24px;
-  line-height: 28px;
-  color: #000000;
-  background: #FFFFFF;
-  border-style: none;
-  border-radius: 13px;
-}
-
-.navbar .register {
-  position: absolute;
-  width: 148px;
-  height: 29px;
-  left: 1019px;
-  top: 26px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 28px;
-  color: #000000;
-}
-
 .navbar a {
   text-decoration: none;
+}
+.login{
+  margin-right: 10%;
+}
+.login ul{
+  display: flex;
+  justify-content: space-between;
+}
+nav{
+  margin-right: 20%;
+}
+nav li{
+
 }
 
 /* ==========================================================================
    Main Section
    ========================================================================== */
 
-  .container {
-    position: absolute;
-    width: 1080px;
-    height: 826px;
-    left: 210px;
-    top: 82px;
-    background: rgb(237, 237, 237);
-  }
   .main-form {
-    position: absolute;
-    width: 726px;
-    height: 620px;
-    left: 169px;
-    top: 105px;
     background: rgb(198, 204, 198);
     border: 4px solid #00811C;
     box-sizing: border-box;
     border-radius: 70px;
 }
   .title-form {
-    position: absolute;
-    width: 105px;
-    height: 46px;
-    left: 300px;
     top: 30px;
     font-size: 36px;
     color: #000000;
   }
 
   .username {
-    position: absolute;
-    width: 391px;
-    height: 24px;
-    left: 180px;
-    top: 200px;
     background: #FFFFFF;
     border-radius: 11px;
     border-color: #00811C;
   }
 
   .password {
-    position: absolute;
-    width: 391px;
-    height: 24px;
-    left: 180px;
-    top: 300px;
     background: #FFFFFF;
     border-radius: 11px;
     border-color: #00811C;
   }
 
   .UserLabel {
-    position: absolute;
-    left: 290px;
-    top: 172px;
     font-size: 24px;
     color: #000000;
   }
 
   .PassLabel {
-    position: absolute;
-    left: 304px;
-    top: 272px;
     font-size: 24px;
     color: #000000;
   }
-
-  .loginbutton {
-    position: absolute;
-    left: 245px;
-    top: 354px;
-    font-size: 18px;
-    color: black;
-    border-radius: 15px;
-    border-color: #00811C;
-    background: #FFFFFF;
-    width: 262px;
-  }
-
   .forgotbutton {
-    position: absolute;
-    left: 245px;
-    top: 400px;
     font-size: 18px;
     color: black;
     border-radius: 15px;
@@ -353,25 +247,13 @@ body {
    Footer Section
    ========================================================================== */
  .footer {
-   position: absolute;
-   width: 100%;
-   height: 85px;
-   top: 908px;
-<<<<<<< HEAD
-=======
-   background: #987c43;
->>>>>>> master
-   box-shadow: black 0px 0px 4px;
+   box-shadow: black 0px 0px 4px, #844204 0px 30px;
    z-index: 9;
    background: rgb(121, 84, 11);
+   margin-bottom: -8px;
  }
 
  .copyright {
-   position: absolute;
-   width: 210px;
-   height: 25px;
-   left: 1308px;
-   top: 46px;
    font-style: normal;
    font-weight: normal;
    font-size: 11px;
