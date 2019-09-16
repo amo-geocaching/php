@@ -18,6 +18,7 @@ require 'header.php';
     </div>
 </main>
 
+>>>>>>> master
 <?php
 require 'footer.php';
 ?>

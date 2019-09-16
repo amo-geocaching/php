@@ -52,7 +52,6 @@ else if ($email == $result['email']){
 <form action="">
     <input type="submit" value="edit">
 </form>
-------------------------
 
 <p>Ken jij deze activiteit niet? dan kan je deze mail negeren.</p>
 ';

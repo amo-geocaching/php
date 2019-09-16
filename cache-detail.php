@@ -71,6 +71,11 @@ $caches = $prepare->fetch(PDO::FETCH_ASSOC);
                                 </form>
                                 <?php
                             }
+                            if ($_SESSION['loggedin'] == true ){
+                                ?>
+                                <button class=""  id="edit" onclick="window.location.href = 'cache-edit.php';">Edit cache</button>
+                                <?php
+                            }
                             ?>
 
                             <?php
