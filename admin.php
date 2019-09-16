@@ -12,11 +12,11 @@ require 'header.php';
                     <label for="description">Omschrijving</label>
                     <input type="text" name="description" id="description">
 
-                    <label for="coordinateY">Lengtegraad</label>
-                    <input type="text" name="coordinateY" id="coordinateY">
-
                     <label for="coordinateX">Breedtegraad</label>
                     <input type="text" name="coordinateX" id="coordinateX">
+
+                    <label for="coordinateY">Lengtegraad</label>
+                    <input type="text" name="coordinateY" id="coordinateY">
 
                     <label for="difficulty">Moeilijkheid</label>
                     <input type="text" name="difficulty" id="difficulty">
