@@ -14,7 +14,7 @@ require 'header.php'
                 <input type="password" name="password" required="" class="password">
                 <input class="loginbutton"  id="submit-team" type="submit" name="type" value="login">
             </form>
-            <button class="forgotbutton"  id="forgot" onclick="window.location.href = 'submit-email.php';">Wachtwoord vergeten?</button>
+            <button class="forgotbutton"  id="forgot" onclick="window.location.href = 'edit-account.php';">Wachtwoord vergeten?</button>
         </div>
     </div>
 </div>

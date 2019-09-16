@@ -20,7 +20,6 @@ $prepare->execute([
 ]);
 $result = $prepare->fetch(PDO::FETCH_ASSOC);
 $hashedpassword = $result['password'];
-
 //kijkt of er een mail is opgegeven
 if(empty($email)){
     echo 'Je hebt geen email opgegeven, je wordt nu teruggestuurd';
@@ -44,17 +43,14 @@ else if ($email == $result['email']){
 
     $to      = $email;
     $subject = 'Geocaching account aanpassen';
-    $messagemail = '
+    $messagemail = "
  
-<p>Je krijgt deze mail omdat je op onze website gekozen hebt om je account te veranderen. Druk hieronder om verder te gaan
-</p>
- 
-<form action="">
-    <input type="submit" value="edit">
-</form>
+<p>Je krijgt deze mail omdat je op onze website gekozen hebt om je account te veranderen. Druk hieronder om verder te gaan</p>
+
+<a href='../edit-account.php?pass={$hashedpassword}''>Druk hier om je account te wijzigen</a>
 
 <p>Ken jij deze activiteit niet? dan kan je deze mail negeren.</p>
-';
+";
 
     $headers = 'From:noreply@geocaching-project.nl';
     mail($to, $subject, $messagemail, $headers);

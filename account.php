@@ -39,7 +39,7 @@ echo "<h3>$rank</h3>";
         }
         ?>
     </ul>
-    <a href="submit-email.php">Account aanpassen</a>
+    <a href="edit-account.php">Account aanpassen</a>
 
     <?php
     if ($_SESSION['loggedin'] == true && $user['rank'] > 0) {

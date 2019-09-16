@@ -12,9 +12,10 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-$mainpassword = $_POST['password-main'];
-$secupassword = $_POST['password-secu'];
-$hash = $_SESSION['hashedpassword'];
+$username = $_POST['username'];
+$mainpassword = $_POST['password'];
+$secupassword = $_POST['passwordConfirm'];
+$hash = $_SESSION['pass'];
 
 $sql = "SELECT * FROM users WHERE password = :password";
 $prepare = $db->prepare($sql);
@@ -27,24 +28,25 @@ $email = $result['email'];
 
 //past je wachtwoord aan
 
-if($mainpassword == $secupassword && $mainpassword != "" && $hash == $result['password']){
+if($mainpassword == $secupassword && $mainpassword != "" && isset($result)){
 
     $hashedpassword = password_hash ( $mainpassword , PASSWORD_DEFAULT);
 
-    $sql = "UPDATE users SET password = :password WHERE email = :email";
+    $sql = "UPDATE users SET username = :username, password = :password WHERE email = :email";
     $prepare = $db->prepare($sql);
     $prepare->execute([
-        ':email'                => $email,
-        ':password'             => $hashedpassword
+        ':username'             => $username,
+        ':password'             => $hashedpassword,
+        ':email'                => $email
     ]);
 
-    echo "Je account is succesvol aangepast, je word nu teruggestuurd";
-    header("refresh:4;url=../user-login.php");
+    echo "Je account is succesvol aangepast, je word nu doorgestuurd";
+    header("refresh:4;url=../login.php");
 }
-else if($hash != $result['password']){
+else if(!isset($result)){
     echo "FOUT";
 }
 else{
     echo "Je account komen niet overeen, je word teruggestuurd";
-    header("refresh:4;url=../newpassword.php?hashedpassword='.$hashedpassword.'");
+    header("refresh:4;url=../newpassword.php?pass='.$hash.'");
 }

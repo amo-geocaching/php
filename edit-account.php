@@ -1,13 +1,25 @@
 <?php
+require 'config.php';
+$pass = $_GET['pass'];
+$_SESSION['pass'] = $pass;
 
-require 'header.php'?>
+$sql = "SELECT * FROM users WHERE password = :password";
+$prepare = $db->prepare($sql);
+$prepare->execute([
+        ':password' => $pass
+]);
+$result = $prepare->fetch(PDO::FETCH_ASSOC);
+
+if(isset($result)){
+
+require 'header.php';?>
 <main>
     <div class="main-form">
         <div class="create-form-background">
                 <div class="title-form">
                 <h3>Account aanpassen</h3>
             </div>
-            <form id="create-account-form" action="controllers/logincontroller.php" method="post">
+            <form id="create-account-form" action="controllers/newaccount-controller.php" method="post">
                 <label for="name">Nieuwe Gebruikersnaam</label>
                 <input type="text" name="username" required="">
                 <label for="players">Nieuwe Wachtwoord</label>
@@ -20,4 +32,5 @@ require 'header.php'?>
 
     </div>
 </main>
-<?php require 'footer.php'?>
+<?php require 'footer.php';
+}?>
