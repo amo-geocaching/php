@@ -23,9 +23,15 @@ if (session_status() == PHP_SESSION_NONE) {
                 <ul>
                     <li><a href="index.php" class="home">Home</a></li>
                     <li><a href="maps.php" class="maps">Map</a></li>
-                    <li><a href="informatie.php" class="info">Informatie</a></li>
+                    <li><a href="informatie.php" class="info">Info</a></li>
                     <li><a href="cache-list.php" class="cache">Caches</a></li>
                 </ul>
+                <select class="select" name="dropdown" onchange="location = this.value;"><option value="index.php">Home</option>
+                    <option value="" selected disabled hidden>Pagina</option>
+                    <option value="maps.php">Maps</option>
+                    <option value="informatie.php">Info</option>
+                    <option value="cache-list.php">Caches</option>
+                </select>
             </nav>
             <div class="login">
                 <ul>

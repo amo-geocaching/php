@@ -144,12 +144,28 @@ textarea {
     border-radius: 20px;
   }
 
+  .select{
+    display: none;
+    padding: 5px;
+    width: 200px;
+    margin: 20px;
+    margin-left: 10vw;
+    margin-top: -20px;
+  }
+
   /*=====responsiveness========*/
 
   @media screen and (max-width: 769px){
     .side{
       display: none;
     }
+    .select{
+      display: inline;
+    }
+    nav a{
+      display: none;
+    }
+
   }
 
   @media screen and (max-width: 900px){
