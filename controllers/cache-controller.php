@@ -79,6 +79,10 @@ else if ($_POST['type'] === 'delete') {
     header("location: ../index.php?msg=$msg");
     exit;
 }
+else if ($_POST['type'] === 'edit'){
+
+}
+
 else{
     echo 'Er is een fout opgetreden';
 }
