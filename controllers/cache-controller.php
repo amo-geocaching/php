@@ -79,10 +79,44 @@ else if ($_POST['type'] === 'delete') {
     header("location: ../index.php?msg=$msg");
     exit;
 }
-else if ($_POST['type'] === 'edit'){
 
+else if ($_POST['type'] === 'editcache') {
+    $cachename      = $_POST['cachename'];
+    $description    = $_POST['description'];
+    $coordinateX    = $_POST['coordinateX'];
+    $coordinateY    = $_POST['coordinateY'];
+    $difficulty     = $_POST['difficulty'];
+    $properties     = $_POST['properties'];
+    $tip    = $_POST['tip'];
+    $cacheid     = $_SESSION['cacheid'];
+
+    $sql = "UPDATE caches SET 
+    cachename= :cachename, 
+    description= :description, 
+    coordinateX= :coordinateX, 
+    coordinateY= :coordinateY, 
+    difficulty= :difficulty, 
+    properties= :properties, 
+    tip= :tip WHERE cacheid= :cacheid";
+    $prepare = $db->prepare($sql);
+    $prepare->execute([
+        ':cachename'    => $cachename,
+        ':description'  => $description,
+        ':coordinateX'  => $coordinateX,
+        ':coordinateY'  => $coordinateY,
+        ':difficulty'   => $difficulty,
+        ':properties'   => $properties,
+        ':tip'  => $tip,
+        ':cacheid' => $cacheid
+    ]);
+
+    $msg = "Cache is gewijzigd!";
+
+    //header("location: ../index.php?msg=$msg");
+    exit;
 }
 
 else{
     echo 'Er is een fout opgetreden';
 }
+
