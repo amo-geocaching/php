@@ -31,12 +31,12 @@ if (session_status() == PHP_SESSION_NONE) {
                 <ul>
                     <?php
                     if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-                        echo "<li><a href='account.php' class='register'>Account</a></li>";
-                        echo "<li><button class=\"login-button\"  id=\"logout\" onclick=\"window.location.href = './controllers/logoutcontroller.php';\">Logout</button></li>";
+                        echo "<li><a href='account.php' class='login-button'>Account</a></li>";
+                        echo "<li><button class='login-button'  id=\"logout\" onclick=\"window.location.href = './controllers/logoutcontroller.php';\">Logout</button></li>";
                     }
                     else{
-                        echo "<li><button class=\"login-button\"  id=\"login\" onclick=\"window.location.href = 'login.php';\">Login</button></li>";
-                        echo "<li><a href='register.php' class='register'>Register</a></li>";
+                        echo "<li><button class='login-button'  id=\"login\" onclick=\"window.location.href = 'login.php';\">Login</button></li>";
+                        echo "<li><a href='register.php' class='login-button'>Register</a></li>";
                     }
                     ?>
                 </ul

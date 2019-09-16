@@ -97,42 +97,52 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-body {
-   font-family: "Century Gothic", sans-serif;
- }
-.navbar {
-  position: relative;
-  height: 100%;
-  background: #339933;
-  z-index: 10;
-  display: flex;
-  justify-content: space-between;
-  box-shadow: 0px 0px 4px black;
-  font-size: 1.4em;
-}
-.navbar ul{
-  display: flex;
-  justify-content: space-between;
-}
-.navbar * {
-  list-style: none;
-}
-.navbar a {
-  text-decoration: none;
-}
-.login{
-  margin-right: 10%;
-}
-.login ul{
-  display: flex;
-  justify-content: space-between;
-}
-nav{
-  margin-right: 20%;
-}
-nav li{
+  body {
+    font-family: "Century Gothic", sans-serif;
+  }
 
-}
+  .navbar{
+    display: flex;
+    justify-content: space-between;
+    background: #339933;
+    font-size: 1.3em;
+    position: relative;
+    z-index: 10;
+    box-shadow: black 0px 0px 6px;
+  }
+
+  .navbar ul{
+    display: flex;
+  }
+
+  .navbar nav li{
+    margin-left: 10%;
+    margin-right: 5%;
+    padding: 12px;
+  }
+
+  .login{
+    margin-left: 45%;
+    margin-right: 40%;
+  }
+
+  .navbar * {
+    list-style: none;
+  }
+
+  .navbar a {
+    text-decoration: none;
+  }
+
+  .login-button{
+    background: whitesmoke;
+    margin-right: 50px;
+    float: right;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+  }
+
 
 /* ==========================================================================
    Main Section
