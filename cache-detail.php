@@ -104,8 +104,31 @@ $caches = $prepare->fetch(PDO::FETCH_ASSOC);
             </div>
         </div>
     </main>
-
 <?php }else {
-    echo 'Je moet eerst inloggen om caches te kunnen zien';
+    ?>
+    <style>
+        main{
+            min-height: 100vh;
+        }
+        .middle a{
+            font-size: 1.5em;
+            text-align: center;
+            margin: 10%;
+        }
+    </style>
+    <main>
+        <div class="detail-main">
+            <div class="side">
+
+            </div>
+            <div class="middle">
+                <a href="login.php">Je moet eerst inloggen om deze pagina te zien!</a>
+            </div>
+            <div class="side">
+
+            </div>
+        </div>
+    </main>
+<?php
 }
 require 'footer.php';
