@@ -3,7 +3,12 @@ require 'config.php';
 $sql = "SELECT caches.*, logs.userid, logs.isFound FROM caches LEFT JOIN logs ON caches.cacheid = logs.cacheid";
 $query = $db->query($sql);
 $caches = $query->fetchAll(PDO:: FETCH_ASSOC);
-$user = $_SESSION['id'];
+if(isset($_SESSION['id'])){
+    $user = $_SESSION['id'];
+}
+else{
+    $user = false;
+}
 require 'header.php';
 ?>
 <main>

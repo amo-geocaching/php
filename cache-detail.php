@@ -7,7 +7,7 @@
  */
 
 require 'header.php';
-if($_SESSION['loggedin'] == true) {
+if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 $_SESSION['cacheid'] = $_GET['cacheid'];
 
 $sql = "SELECT * FROM caches WHERE cacheid = :cacheid";
@@ -105,7 +105,7 @@ $caches = $prepare->fetch(PDO::FETCH_ASSOC);
         </div>
     </main>
 
-<?php }else if($_SESSION['loggedin'] == false){
+<?php }else {
     echo 'Je moet eerst inloggen om caches te kunnen zien';
 }
 require 'footer.php';
