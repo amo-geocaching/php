@@ -119,7 +119,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                             <input type="submit" value="Delete this Cache">
                         </form>
                         <button class="" id="edit"
-                                onclick="window.location.href = 'cache-edit.php?cacheid=<?php echo $caches['cacheid'] ?>';">
+                                onclick="window.location.href = 'cache-edit.php?cacheid=<?php echo $caches[0]['cacheid'] ?>';">
                             Edit cache
                         </button>
 
