@@ -285,6 +285,20 @@ textarea {
     width: 70%;
   }
 
+  .comment{
+    background: #E8E8E8;
+    border: solid grey;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    min-width: 18vw;
+  }
+
+  .comment .namebox {
+    display: flex;
+    justify-content: center;
+    margin-bottom: -20px;
+  }
+
   /*======cachelist========*/
 
   .cachelist{
