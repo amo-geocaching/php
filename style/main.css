@@ -237,7 +237,7 @@ textarea {
     margin-right: 10%;
   }
 
-  .forgotbutton, .loginbutton, .add-cache-button {
+  .forgotbutton, .loginbutton, .add-cache-button, .editbutton {
     font-size: 1.3em;
     background: #c9fda5 !important;
     color: black;
@@ -364,12 +364,20 @@ textarea {
     justify-content: space-between;
   }
   .form-groups label{
+    text-align: right;
     min-width: 40%;
     font-size: 1.5em;
     margin-top: 15px;
   }
   .form-groups input{
     width: 40%;
+  }
+
+  .main-edit{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
   }
 
 /* ==========================================================================
