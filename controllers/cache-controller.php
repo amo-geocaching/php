@@ -112,7 +112,7 @@ else if ($_POST['type'] === 'editcache') {
 
     $msg = "Cache is gewijzigd!";
 
-    //header("location: ../index.php?msg=$msg");
+    header("location: ../maps.php?msg=$msg");
     exit;
 }
 

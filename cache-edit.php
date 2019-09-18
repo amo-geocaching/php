@@ -31,10 +31,10 @@ $cache = $prepare->fetch(PDO::FETCH_ASSOC);
                             <label for="description">Omschrijving</label>
                             <input value="<?php echo $cache['description']?>" type="text" name="description" id="description">
 
-                            <label for="coordinateX">Breedtegraad</label>
+                            <label for="coordinateX">Lengtegraad</label>
                             <input value="<?php echo $cache['coordinateX']?>" type="text" name="coordinateX" id="coordinateX">
 
-                            <label for="coordinateY">Lengtegraad</label>
+                            <label for="coordinateY">Breedtegraad</label>
                             <input value="<?php echo $cache['coordinateY']?>" type="text" name="coordinateY" id="coordinateY">
 
                             <label for="difficulty">Moeilijkheid</label>
