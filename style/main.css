@@ -226,7 +226,7 @@ textarea {
     color: #000000;
   }
 
-  .login-register input {
+  .login-register input, .add-cache input {
     padding: 6px;
     margin: 2%;
     background: #FFFFFF;
@@ -325,9 +325,38 @@ textarea {
    margin-bottom: 4%;
   }
 
-  
+/*======cachelist========*/
 
+  .account-info{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+  }
 
+  .account-info ul{
+    background: whitesmoke;
+    border: solid #E0E0E0 4px;
+    border-radius: 10px;
+    font-size: 1.7em;
+    padding: 30px;
+  }
+
+  .account-info li{
+    text-decoration: none;
+    text-align: left;
+    list-style: none;
+  }
+
+  .account-info h2{
+    font-size: 2em;
+  }
+
+/*======cache create/edit========*/
+
+  .add-cache{
+
+  }
 
 
 /* ==========================================================================

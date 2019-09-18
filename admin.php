@@ -1,7 +1,11 @@
 <?php
 require 'header.php';
 ?>
-    <div class="container" >
+<div class="detail-main">
+    <div class="side">
+
+    </div>
+    <div class="middle">
         <div class="add-cache" >
             <form action="controllers/create-cachecontroller.php" method="post">
                 <input type="hidden" name="type" value="createcache">
@@ -35,6 +39,10 @@ require 'header.php';
             </form>
         </div>
     </div>
+    <div class="side">
+
+    </div>
+</div>
 <?php
 require 'footer.php';
 ?>
