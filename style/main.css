@@ -226,7 +226,7 @@ textarea {
     color: #000000;
   }
 
-  .login-register input, .add-cache input {
+  .login-register input {
     padding: 6px;
     margin: 2%;
     background: #FFFFFF;
@@ -236,7 +236,7 @@ textarea {
     margin-right: 10%;
   }
 
-  .forgotbutton, .loginbutton, .reg {
+  .forgotbutton, .loginbutton, .add-cache-button {
     font-size: 1.3em;
     background: #c9fda5 !important;
     color: black;
@@ -354,10 +354,22 @@ textarea {
 
 /*======cache create/edit========*/
 
-  .add-cache{
-
+  .form-groups{
+    text-align: center;
+    margin: 40px;
   }
-
+  .form-group{
+    display: flex;
+    justify-content: space-between;
+  }
+  .form-groups label{
+    min-width: 40%;
+    font-size: 1.5em;
+    margin-top: 15px;
+  }
+  .form-groups input{
+    width: 40%;
+  }
 
 /* ==========================================================================
    Footer Section
