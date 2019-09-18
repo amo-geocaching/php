@@ -23,7 +23,6 @@ $caches = $query->fetchAll(PDO::FETCH_ASSOC);
 require 'header.php';
 
 ?>
-<body>
 <main>
     <div class="detail-main">
         <div class="side">
@@ -60,5 +59,4 @@ require 'header.php';
     </div>
 
 </main>
-</body>
 <?php require 'footer.php'?>

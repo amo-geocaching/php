@@ -4,6 +4,7 @@ require 'DBController.php';
 $db_handle = new DBController();
 $ratingResult = $db_handle->runQuery("SELECT DISTINCT rating FROM caches ORDER BY cachename ASC");
 ?>
+<main>
     <div class="detail-main">
         <div class="side">
 
