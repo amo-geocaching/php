@@ -13,12 +13,11 @@ if ($_POST['type'] === 'createcache') {
         $coordinateX    = $_POST['coordinateX'];
         $coordinateY    = $_POST['coordinateY'];
         $difficulty     = $_POST['difficulty'];
-        $rating         = $_POST['rating'];
         $properties     = $_POST['properties'];
         $tip            = $_POST['tip'];
 
-        $sql = "INSERT INTO caches (cachename, description, coordinateX, coordinateY, difficulty, rating, properties, tip) 
-            VALUES (:cachename, :description, :coordinateX, :coordinateY, :difficulty, :rating, :properties, :tip)";
+        $sql = "INSERT INTO caches (cachename, description, coordinateX, coordinateY, difficulty, properties, tip) 
+            VALUES (:cachename, :description, :coordinateX, :coordinateY, :difficulty, :properties, :tip)";
         $prepare = $db->prepare($sql);
         $prepare->execute([
             ':cachename'    => $cachename,
@@ -26,7 +25,6 @@ if ($_POST['type'] === 'createcache') {
             ':coordinateX'  => $coordinateX,
             ':coordinateY'  => $coordinateY,
             ':difficulty'   => $difficulty,
-            ':rating'       => $rating,
             ':properties'   => $properties,
             ':tip'          => $tip
 

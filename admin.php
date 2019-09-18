@@ -19,11 +19,11 @@ require 'header.php';
                         <input type="text" name="description" id="description">
                     </div>
                     <div class="form-group">
-                        <label for="coordinateX">Breedtegraad:</label>
+                        <label for="coordinateX">Lengtegraad:</label>
                         <input type="text" name="coordinateX" id="coordinateX">
                     </div>
                     <div class="form-group">
-                        <label for="coordinateY">Lengtegraad:</label>
+                        <label for="coordinateY">Breedtegraad:</label>
                         <input type="text" name="coordinateY" id="coordinateY">
                     </div>
                     <div class="form-group">
