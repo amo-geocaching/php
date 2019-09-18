@@ -16,7 +16,6 @@ $user = $prepare->fetch(PDO::FETCH_ASSOC);
 $username = $user['username'];
 $rank = $_SESSION['rank'];
 $_SESSION['rankid'] = $user['rank'];
-$_SESSION['pass'] = $user['password'];
 
 $sql = "SELECT caches.*, logs.userid, logs.isFound FROM caches INNER JOIN logs ON caches.cacheid = logs.cacheid WHERE logs.IsFound = true ";
 $query = $db->query($sql);
@@ -46,7 +45,7 @@ require 'header.php';
                     }
                     ?>
                 </ul>
-                <a href="edit-account.php">Account aanpassen</a>
+                <a href="edit-account.php?pass=<?php echo $user['password']?>}">Account aanpassen</a>
 
                 <?php
                 if ($_SESSION['loggedin'] == true && $user['rank'] > 0) {
