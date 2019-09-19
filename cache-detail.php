@@ -78,32 +78,34 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                     ?>
                 </div>
                 <div class="detail-logging">
+                    <div class="top-section">
                     <?php
                     if (isset($caches[0]['cacheid'])) {
                         if ($cacheinfo == false) {
                             ?>
-                            <form action="controllers/cache-controller.php" method="post">
-                                <input type="hidden" name="logcache" value="1">
-                                <input type="hidden" name="found" value="1">
-                                <input id="submit" type="submit" value="Gevonden">
-                            </form>
-                            <form action="controllers/cache-controller.php" method="post">
-                                <input type="hidden" name="logcache" value="1">
-                                <input type="hidden" name="found" value="0">
-                                <input id="submit" type="submit" value="Niet gevonden">
-                            </form>
-
+                            <div class="detail-controls">
+                                <form action="controllers/cache-controller.php" method="post">
+                                    <input type="hidden" name="logcache" value="1">
+                                    <input type="hidden" name="found" value="1">
+                                    <input class="found-button" id="submit" type="submit" value="Gevonden">
+                                </form>
+                                <form action="controllers/cache-controller.php" method="post">
+                                    <input type="hidden" name="logcache" value="1">
+                                    <input type="hidden" name="found" value="0">
+                                    <input class="found-button" id="submit" type="submit" value="Niet gevonden">
+                                </form>
+                            </div>
                             <?php
                         } else {
                             echo "<h3>Je hebt deze cache gelogt op $logdate</h3>";
                             ?>
                             <form action="controllers/cache-controller.php" method="post">
-                                <input type="number" min="0" max="5" name="rating">
-                                <input id="submit" type="submit" value="Rate">
+                                <input class="user-review" type="number" min="0" max="5" name="rating">
+                                <input class="submit-review" id="submit" type="submit" value="Rate">
                             </form>
                             <form action="controllers/cache-controller.php" method="post">
-                                <input type="text" maxlength="500" name="comment">
-                                <input id="submit" type="submit" value="Comment">
+                                <input class="user-review" type="text" maxlength="500" name="comment">
+                                <input class="submit-review" id="submit" type="submit" value="Comment">
                             </form>
 
                     <?php
@@ -114,14 +116,15 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                     <?php
                     if ($_SESSION['loggedin'] == true) {
                         ?>
-                        <form action="controllers/cache-controller.php" method="post">
+                        <form class="detail-controls" action="controllers/cache-controller.php" method="post">
+                            <button class="edit" id="edit"
+                                    onclick="window.location.href = 'cache-edit.php?cacheid=<?php echo $caches[0]['cacheid'] ?>';">
+                                Edit cache
+                            </button>
                             <input type="hidden" name="type" value="delete">
-                            <input type="submit" value="Delete this Cache">
+                            <input class="remove" type="submit" value="Delete this Cache">
                         </form>
-                        <button class="" id="edit"
-                                onclick="window.location.href = 'cache-edit.php?cacheid=<?php echo $caches[0]['cacheid'] ?>';">
-                            Edit cache
-                        </button>
+                    </div>
 
                     <h2>Comments:</h2>
                             <?php

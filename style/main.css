@@ -237,13 +237,12 @@ textarea {
     margin-right: 10%;
   }
 
-  .forgotbutton, .loginbutton, .add-cache-button, .editbutton {
+  .forgotbutton, .loginbutton, .add-cache-button, .editbutton, .submit-review, .edit, .remove, .found-button {
     font-size: 1.3em;
-    background: #c9fda5 !important;
+    background: #c9fda5 ;
     color: black;
     border-radius: 15px;
     border-color: #00811C;
-    background: #FFFFFF;
     padding: 3%;
     margin-top: 60px;
   }
@@ -279,11 +278,64 @@ textarea {
     margin: 40px;
   }
   .detail-logging{
+    min-width: 35%;
     padding: 2%;
     border-left: grey solid;
   }
   .detail-info{
     width: 70%;
+  }
+
+  .top-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .top-section form{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .top-section *{
+    margin: 10px;
+  }
+
+  .top-section .found-button{
+    width: 100%;
+    background: white;
+  }
+
+  .top-section .user-review{
+    width: 100%;
+  }
+
+  .top-section .submit-review{
+    width: 150px;
+    font-size: 0.9em;
+  }
+
+  .top-section .edit, .remove, .top-section .found-button{
+    text-align: center;
+    margin: 5px;
+    font-size: 1.15em;
+    padding: 4%;
+  }
+
+  .top-section .detail-controls{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .detail-controls  .edit{
+    border-color: yellow;
+    background: white;
+  }
+
+  .detail-controls .remove{
+    border-color: red;
+    background: white;
   }
 
   .comment{
