@@ -58,11 +58,12 @@ else if(isset($_POST['rating']) && $_POST['rating'] <= 5 && $_POST['rating'] >= 
     header("Location: ../cache-detail.php?cacheid=$cacheid");
 }
 else if(isset($_POST['comment']) && strlen($_POST['comment']) <= 500){
-    $sql = "UPDATE logs SET comment = :comment WHERE cacheid = :cacheid";
+    $sql = "UPDATE logs SET comment = :comment WHERE cacheid = :cacheid AND userid = :userid";
     $prepare = $db->prepare($sql);
     $prepare->execute([
-        ':comment'   => $_POST['comment'],
-        ':cacheid'  => $cacheid
+        ':comment'      => $_POST['comment'],
+        ':cacheid'      => $cacheid,
+        ':userid'       => $_SESSION['id']
     ]);
     header("Location: ../cache-detail.php?cacheid=$cacheid");
 }
