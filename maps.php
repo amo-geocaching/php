@@ -31,6 +31,29 @@ require 'header.php';
                 ?>
                 let marker = [];
 
+                navigator.geolocation.getCurrentPosition(success, error);
+
+                function success(pos) {
+                    let crd = pos.coords;
+                    let currentlocation = {lat: crd.latitude, lng: crd.longitude};
+                    console.log(currentlocation);
+
+                    let usericon = "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+
+                    let userlocation = new google.maps.Marker({
+                        position: currentlocation,
+                        map: map,
+                        title: 'Your current location',
+                        icon: {
+                            url: usericon
+                        }
+                    });
+                }
+
+                function error(err) {
+                    console.warn(`ERROR(${err.code}): ${err.message}`);
+                }
+
                 for (let i = 0; i < jscaches.length; i++) {
                     let latitude = parseFloat(jscaches[i].coordinateY);
                     let longitude = parseFloat(jscaches[i].coordinateX);
@@ -68,7 +91,6 @@ require 'header.php';
 
             }
         </script>
-
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkT7PLWK2NvHi-oPt7iPf-wLRix53NUnQ&callback=myMap"></script>
     </div>
 
