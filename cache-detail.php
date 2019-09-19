@@ -65,6 +65,8 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                 <div class="detail-info">
                     <?php
                     $cachename = $caches[0]['cachename'];
+                    $latitude = $caches[0]['coordinateX'];
+                    $longitude = $caches[0]['coordinateY'];
                     $rating = $caches[0]['rating'];
                     $description = $caches[0]['description'];
                     $properties = $caches[0]['properties'];
@@ -75,6 +77,8 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                     echo "<p>$description</p>";
                     echo "<p>Eigenschappen: $properties</p>";
                     echo "<p>Tip: $tip</p>";
+                    echo "<p>Lengtegraad: $latitude</p>";
+                    echo "<p>Breedtegraad: $longitude</p>";
                     ?>
                 </div>
                 <div class="detail-logging">
