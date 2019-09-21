@@ -169,6 +169,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
             <div class="side">
             </div>
         </div>
+        <script src="scripts/getDistance.js"></script>
     </main>
     <?php
 }

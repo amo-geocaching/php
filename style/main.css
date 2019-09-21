@@ -252,8 +252,37 @@ textarea {
     color: #000000;
   }
 
-/*=======cache-detail==========*/
+/*=======map==========*/
 
+  .map-cache-info{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background: #fffffa;
+    margin: 5px;
+    margin-bottom: -15px;
+  }
+
+  .map-cache-info a{
+    font-size: 1.4em;
+    background: #c9fda5;
+    padding: 4px;
+    border-radius: 15px;
+    border-color: #00811C;
+  }
+
+  .distance-to{
+    margin: 45px;
+    border-left: black solid;
+    padding-left: 30px;
+    font-size: 1.5em;
+  }
+
+  .maps-main{
+    border-top: double tan 12px;;
+  }
+
+/*=======cache-detail==========*/
   .detail-main{
     width: 100%;
     display: flex;
@@ -373,9 +402,12 @@ textarea {
 /*=======informatie=======*/
 
   .informatie p{
-    margin-left: 15%;
-    margin-right: 15%;
-   margin-bottom: 4%;
+    margin: 8%;
+    font-size: 1.2em;
+  }
+
+  .informatie img{
+    border: double tan;
   }
 
 /*======cachelist========*/
