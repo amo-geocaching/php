@@ -120,11 +120,12 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                     <?php
                     if ($_SESSION['loggedin'] == true) {
                         ?>
+                        <button class="edit" id="edit"
+                                onclick="window.location.href = 'cache-edit.php?cacheid=<?php echo $caches[0]['cacheid'] ?>';">
+                            Edit cache
+                        </button>
                         <form class="detail-controls" action="controllers/cache-controller.php" method="post">
-                            <button class="edit" id="edit"
-                                    onclick="window.location.href = 'cache-edit.php?cacheid=<?php echo $caches[0]['cacheid'] ?>';">
-                                Edit cache
-                            </button>
+
                             <input type="hidden" name="type" value="delete">
                             <input class="remove" type="submit" value="Delete this Cache">
                         </form>
