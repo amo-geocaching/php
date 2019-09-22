@@ -21,7 +21,6 @@ require 'header.php'
                         <input class="loginbutton"  id="submit-team" type="submit" value="Login">
                         <input type="hidden" name="type" value="login">
                     </form>
-                    <button class="forgotbutton"  id="forgot" onclick="window.location.href = 'edit-account.php';">Wachtwoord vergeten?</button>
                 </div>
             </div>
         </div>
